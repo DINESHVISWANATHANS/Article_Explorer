@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "537159980398",
+    "project_id": "article-explorer",
+    "storage_bucket": "article-explorer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537159980398:android:cd4793f87d3a83989a9d7f",
+        "android_client_info": {
+          "package_name": "com.example.article_explorer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjAw0fwIinT76_rXsZ8lqzpV9dtlR9bYc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
