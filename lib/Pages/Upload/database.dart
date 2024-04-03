@@ -8,9 +8,15 @@ class DatabaseMethode {
         .doc(id)
         .set(articleslist);
   }
-  Future<Stream<QuerySnapshot>> getArtical()async{
-    return await FirebaseFirestore.instance.collection("Artical content").snapshots();
-  }
+  Future<Stream<QuerySnapshot>> getArtical(String userEmail)async{
+  return FirebaseFirestore.instance
+      .collection('Artical content')
+      .where('useremail', isEqualTo: userEmail) // Assuming 'useremail' is the field storing user's email
+      .snapshots();
+}
+
+   
+
 
   Future updateartical(String id,Map<String,dynamic>data)async{
     return await FirebaseFirestore.instance.collection(
@@ -18,9 +24,15 @@ class DatabaseMethode {
     ).doc(id).update(data);
   }
   Future deleteartical(String id)async{
-    return await FirebaseFirestore.instance.collection(
-      "Artical content"
-    ).doc(id).delete();
+        try {
+      await FirebaseFirestore.instance
+          .collection('Artical content')
+          .doc(id)
+          .delete();
+      print('Article deleted successfully');
+    } catch (e) {
+      print('Error deleting article: $e');
+    }
   }
 
   // Future articalimage(File? image, String id, String topic) async {
